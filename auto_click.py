@@ -28,10 +28,11 @@ def autoClick():
     global start, lastX, lastY
     if not start :
         lastX, lastY = pyautogui.position()
+	click(lastX, lastY)
     start += 1
     X, Y = pyautogui.position()
     num = math.sqrt(pow(lastX-X, 2)+pow(lastY-Y, 2))
-    print(lastX, lastY, X, Y, num)
+    #print(lastX, lastY, X, Y, num)
     
     if num >= 25 :
         click(X,Y)
